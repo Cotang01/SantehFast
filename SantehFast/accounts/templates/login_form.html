@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% if user.is_anonymous %}
+    {{ form.as_p }}
+    <button type="submit">Войти в аккаунт</button>
+    {% else %}
+    <p>Вы уже вошли</p>
+    {% endif %}
+</form>
+{% endblock %}
+
+

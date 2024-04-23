@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}Главная{% endblock %}
+{% block main %}
+{% if messages %}
+{% for message in messages %}
+<div id="order-message" class="alert">
+    {{ message }}
+</div>
+{% endfor %}
+{% endif %}
+<script>
+    var successMessage = document.getElementById('order-message');
+    successMessage.style.display = 'block';
+    setTimeout(function(){
+        successMessage.style.display = 'none';
+    }, 2000);
+</script>
+<div class="container">
+    <h1>
+        {% if user.is_authenticated %}
+        <p> Привет, {{ user.username }}!</p>
+        {% else %}
+        <p>Здравствуй, Анонимный пользователь!</p>
+        {% endif %}
+    </h1>
+    <h2>
+        <p>
+            Наша компания SantehFast предоставляет высококачественные услуги по
+            ремонту квартир самых разных сложностей, от починки унитаза до
+            капитального ремонта многокомнатной квартиры, у нас работают
+            профессионалы своего дела с многолетним опытом работы и золотыми
+            руками.
+        </p>
+    </h2>
+    <h3>
+        <p>
+            Если хотите посмотреть примеры работ, можете сделать это, заглянув
+            в нашу "Галерею"
+        </p>
+    </h3>
+    <h4>
+        <p>Если вам нужно провести ремонт, оставьте заявку или можете сразу
+            позвонить нам по номеру ^заглушка^.
+        </p>
+    </h4>
+</div>
+{% endblock %}

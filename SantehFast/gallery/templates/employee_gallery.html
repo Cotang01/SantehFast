@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="employee-gallery">
+    {% for e in employee %}
+    <div class="employee-block">
+        <img src="{{ e.avatar.url }}" alt="{{ e.avatar.title }}" width="200">
+        <p>{{ e }}</p>
+        <p>Опыт работы {{ e.experience }} лет</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+
+

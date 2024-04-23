@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="work-gallery">
+    {% for image in images %}
+    <div class="image-block">
+        <img src="{{ image.image.url }}" alt="{{ image.title }}" width="500">
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
+    <title>{% block title %}Title{% endblock %}</title>
+</head>
+<body>
+<header>
+    <div class="wrap">
+        <div class="header">
+            <div class="logo">
+                <a><img src="{% static 'images/logo.png' %}" width="175"
+                        height="175" alt="logo"/></a>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="{% url 'home' %}">Главная</a></li>
+                    <li><a href="{% url 'create_order' %}">Создать заявку</a></li>
+                    <li><a href="{% url 'work_gallery' %}">Галерея</a></li>
+                    <li><a href="{% url 'employee_gallery' %}">Специалисты</a></li>
+                    {% if not user.is_authenticated %}
+                    <li>
+                        <a href="{% url 'register_user' %}">Зарегистрироваться</a>
+                        <a href="{% url 'login_user' %}">Войти в
+                            аккаунт</a>
+                    </li>
+                    {% else %}
+                    <li><a href="{% url 'profile' %}">Профиль</a></li>
+                    <li>
+                        <form action="{% url 'logout' %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="button-logout">
+                                Выйти из аккаунта
+                            </button>
+                        </form>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</header>
+<main>
+{% block main %}
+{% endblock %}
+</main>
+</body>
+<footer>
+    {% block footer %}
+    <p>&copy; <span id="curYear"></span> All rights reserved.</p>
+    <script>
+        document.getElementById('curYear').textContent = new Date()
+            .getFullYear();
+    </script>
+    {% endblock %}
+</footer>
+</html>
