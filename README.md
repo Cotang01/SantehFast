@@ -1,8 +1,5 @@
 # SantehFast
 ### Инструкция по запуску приложения:
-```console
-git clone https://github.com/Cotang01/SantehFast
-```
 ```
 git clone https://github.com/Cotang01/SantehFast
 ```
