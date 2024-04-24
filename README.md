@@ -2,7 +2,7 @@
 ## В демонстративных целях в проекте оставлены такие файлы и директории, как db.sqlite3, static, staticfiles, media
 ### Инструкция по запуску приложения:
 ```
-git clone https://github.com/Cotang01/SantehFast
+git clone https://github.com/Cotang01/SantehFast.git
 ```
 ```
 cd SantehFast
