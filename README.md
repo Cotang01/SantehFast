@@ -7,10 +7,15 @@ git clone https://github.com/Cotang01/SantehFast.git
 ```
 cd SantehFast
 ```
-#### Настройка виртуального окружения (уже должен быть предустановлен python версии 3.11)
+#### Настройка виртуального окружения для Windows (уже должен быть предустановлен python версии 3.11)
 ```
 python -m venv venv
 call venv/Scripts/activate
+```
+#### Настройка виртуального окружения для Linux (уже должен быть предустановлен python версии 3.11)
+```
+python3 -m venv venv
+source venv/bin/activate
 ```
 ```
 cd SantehFast
